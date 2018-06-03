@@ -16,7 +16,7 @@ class PDOStatementCommand extends PDOCommand implements PDOStatementCommandInter
         $this->parentMethodName = $parentMethodName;
     }
     
-    public function getParentMethodName()
+    public function getParentMethodName() : string
     {
         return $this->parentMethodName;
     }
@@ -26,7 +26,7 @@ class PDOStatementCommand extends PDOCommand implements PDOStatementCommandInter
         $this->parentArgs = $args;
     }
     
-    public function getParentArgs()
+    public function getParentArgs() : array
     {
         return $this->parentArgs;
     }
