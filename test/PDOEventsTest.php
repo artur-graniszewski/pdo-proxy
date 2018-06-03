@@ -3,6 +3,7 @@
 namespace PDOProxyTest;
 
 use PDOProxy\EventManager;
+use PDOProxy\PDOStatementCommand;
 use PDOProxy\ProxyConfiguration;
 use PDOProxy\PDOCommand;
 use PDOProxy\PDO;
@@ -46,7 +47,28 @@ class PDOEventsTest extends \PHPUnit\Framework\TestCase
         
         $this->runMethod($methodName, $params, $isStatic, $result);
     }
-    
+
+    public function testPDOEventArgs()
+    {
+        $event = new PDOCommand("test", ["test1"]);
+        $this->assertEquals(["test1"], $event->getArgs());
+
+        $event->setArgs(["test2"]);
+        $this->assertEquals(["test2"], $event->getArgs());
+    }
+
+    public function testPDOEventParentArgs()
+    {
+        $event = new PDOStatementCommand("test", ["test1"], "test2", ["test3"]);
+        $this->assertEquals(["test1"], $event->getArgs());
+        $this->assertEquals(["test3"], $event->getParentArgs());
+
+        $event->setArgs(["test2"]);
+        $event->setParentArgs(["test4"]);
+        $this->assertEquals(["test2"], $event->getArgs());
+        $this->assertEquals(["test4"], $event->getParentArgs());
+    }
+
     public function runMethod($methodName, $params = [], $isStatic, $result = null)
     {
         $preExecuted = false;
