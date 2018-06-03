@@ -1,5 +1,6 @@
 {
 	"name" : "pdo-proxy/pdo-proxy",
+	"description": "PDO Proxy is a simple, event-driven PDO wrapper that allows to intercept and alter execution of all PDO methods. The PDOProxy\PDO and PDOProxy\PDOStatement classes extend the native PDO and PDOStatement classes, therefore they are compatible with any method expecting regular PDO objects.",
 	"license" : "BSD-3-Clause-Clear",
 	"type" : "library",
 	"support" : {
