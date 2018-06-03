@@ -7,6 +7,8 @@ Such feature can be used to:
 * selectively (or entirely) mock the PDO functionality for integration tests
 * intercept PDO method execution for logging or debugging purposes
 
+The ```PDOProxy\PDO``` and ```PDOProxy\PDOStatement``` classes extend the native ```PDO``` and ```PDOStatement``` classes, therefore they are compatible with any method expecting regular ```PDO``` objects.
+
 # Usage
 
 After installing this library, you must provide the Proxy configuration, like so:
@@ -23,6 +25,7 @@ $ev = new EventManager();
 
 // you can alter the output of any method, like "__construct", "query", "prepare"...
 // in order to do so, you must pass method name as an event name
+// please note: multiple event listeners may be attached to a single event type
 $ev->addEventListener("query", function(PDOCommand $command, string $eventName) {
     // you can alter the result of any PDO method
     $event->setResult(new PDOMockStatement("query", "SELECT 1");
@@ -85,6 +88,7 @@ interface PDOCommandInterface
 
 The ```getArgs()``` and ```setArgs()``` methods allow to fetch and alter input parameters passed to ```PDOProxy\PDO``` method, while ```getMethodName()``` allows to check which ```PDO``` method was executed.
 
+The ```getResult()``` and ```setResult()``` event methods allow to access and alter result that will be returned by specific ```PDO``` method.
 
 ### PDO Statement Command Event
 
