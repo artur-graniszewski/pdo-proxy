@@ -83,15 +83,15 @@ class PDO extends \PDO
         return $this->executeMethod(__METHOD__, func_get_args());
     }
 
-    /**
-     * {@inheritDoc}
-     * @see PDO::getAvailableDrivers()
-     */
-    public static function getAvailableDrivers()
-    {
-        return parent::getAvailableDrivers();
-        //return $this->executeStaticMethod(__METHOD__, func_get_args());
-    }
+//    /**
+//     * {@inheritDoc}
+//     * @see PDO::getAvailableDrivers()
+//     */
+//    public static function getAvailableDrivers()
+//    {
+//        return parent::getAvailableDrivers();
+//        //return $this->executeStaticMethod(__METHOD__, func_get_args());
+//    }
 
     /**
      * {@inheritDoc}

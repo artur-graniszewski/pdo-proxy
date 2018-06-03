@@ -40,6 +40,7 @@ class PDOStatementEventsTest extends \PHPUnit\Framework\TestCase
             ["errorInfo", ["name"], false],
             ["execute", [["params"]], false],
             ["fetch", [1, 2, 3], false, new PDOMockStatement("fetch", [1, 2, 3])],
+            ["fetchObject", ["class", 1], false, new PDOMockStatement("fetchObject", ["class", 1])],
             ["fetchAll", [1, "arg", [3]], false],
             ["fetchColumn", [4], false],
             ["getAttribute", ["attribute"], false],
