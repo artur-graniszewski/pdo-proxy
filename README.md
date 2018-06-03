@@ -109,7 +109,7 @@ The ```getParentArgs()``` and ```setParentArgs()``` methods allow to fetch and a
 
 ### Generic Event interface
 
-All of which extend the following, generic event interface:
+All PDO events extend the following, generic event interface:
 
 ```php
 <?php
