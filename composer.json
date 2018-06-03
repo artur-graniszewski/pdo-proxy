@@ -1,5 +1,5 @@
 {
-	"name" : "PDO Proxy",
+	"name" : "PDO-Proxy",
 	"license" : "BSD-3-Clause-Clear",
 	"type" : "library",
 	"support" : {
