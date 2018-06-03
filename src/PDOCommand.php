@@ -1,7 +1,7 @@
 <?php
 namespace PDOProxy;
 
-class PDOCommand extends Event
+class PDOCommand extends Event implements PDOCommandInterface
 {
     private $methodName;
     

@@ -55,17 +55,17 @@ trait ProxyHelpers
         });
     }
     
-    /**
-     * @param string $methodName
-     * @param mixed[] $args
-     * @return mixed
-     */
-    private function executeStaticMethod(string $methodName, array $args)
-    {
-        return $this->executeCallback($methodName, $args, function($methodName, $args) {
-            return call_user_func_array([get_class($this->getPDOObject()), $methodName], $args);
-        });
-    }
+//    /**
+//     * @param string $methodName
+//     * @param mixed[] $args
+//     * @return mixed
+//     */
+//    private function executeStaticMethod(string $methodName, array $args)
+//    {
+//        return $this->executeCallback($methodName, $args, function($methodName, $args) {
+//            return call_user_func_array([get_class($this->getPDOObject()), $methodName], $args);
+//        });
+//    }
     
     /**
      *

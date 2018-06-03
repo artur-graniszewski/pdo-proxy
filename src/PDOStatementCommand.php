@@ -2,7 +2,7 @@
 
 namespace PDOProxy;
 
-class PDOStatementCommand extends PDOCommand
+class PDOStatementCommand extends PDOCommand implements PDOStatementCommandInterface
 {
     private $parentMethodName = '';
     
