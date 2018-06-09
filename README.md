@@ -19,7 +19,6 @@ After installing this library, you must provide the Proxy configuration, like so
 use PDOProxy\EventManager;
 use PDOProxy\ProxyConfiguration;
 use PDOProxy\PDOCommand;
-use PDOProxy\PDO;
 
 $ev = new EventManager();
 
@@ -44,7 +43,7 @@ $ev->addEventListener("query#pre", function(PDOCommand $command, string $eventNa
 ProxyConfiguration::init($ev);
 ```
 
-Now, you can initialize PDOProxy as usual:
+Now, you can initialize PDOProxy just like regular PDO object:
 
 ```php
 <?php
@@ -56,6 +55,21 @@ $result = $pdo->query("SELECT 2");
 
 // [...]
 ```
+
+# Installation
+
+Proxy can be installed in two different ways:
+
+## via Composer: 
+
+```
+user@host:/directory$ composer require pdo-proxy/pdo-proxy
+```
+
+## by downloading source code
+
+Source codes can be found in ZIP file under the following URL: https://github.com/artur-graniszewski/pdo-proxy/archive/master.zip
+
 
 ## Event types
 
